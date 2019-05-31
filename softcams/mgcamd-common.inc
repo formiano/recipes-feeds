@@ -24,8 +24,8 @@ do_configure() {
 }
 
 do_install() {
-    install -d ${D}/usr/bin
-    install -m 0755 ${S}/../mgcamd_${PV}_${CAM_ARCH} ${D}/usr/bin/${CAMNAME}
+    install -d ${D}/usr/softcams
+    install -m 0755 ${S}/../mgcamd_${PV}_${CAM_ARCH} ${D}/usr/softcams/${CAMNAME}
 }
 
 pkg_postinst_${PN}_prepend () {

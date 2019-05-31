@@ -39,8 +39,8 @@ do_configure_prepend () {
 }
 
 do_install () {
-	install -d ${D}/${bindir}
-	install -m 0755 ${WORKDIR}/build/oscam ${D}/usr/bin/${CAMNAME}
+	install -d ${D}/usr/softcams
+	install -m 0755 ${WORKDIR}/build/oscam ${D}/usr/softcams/${CAMNAME}
 	install -d ${D}/${sysconfdir}/tuxbox/config/${CAMNAME}
 	[[ -e ${S}/../${CAMNAME} ]] && install 644 ${S}/../${CAMNAME}/* ${D}/${sysconfdir}/tuxbox/config/${CAMNAME} 2>/dev/null || true
 	[[ -e ${D}/${sysconfdir}/tuxbox/config/${CAMNAME}/Sample.configs ]] && rm ${D}/${sysconfdir}/tuxbox/config/${CAMNAME}/Sample.configs 2>/dev/null || true

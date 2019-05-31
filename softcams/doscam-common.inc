@@ -25,8 +25,8 @@ do_configure_prepend () {
 }
 
 do_install() {
-	install -d ${D}/${bindir}
-	install -m 0755 ${WORKDIR}/doscam_${PV}_${TARGET_ARCH} ${D}${bindir}/${CAMNAME}
+	install -d ${D}/usr/softcams
+	install -m 0755 ${WORKDIR}/doscam_${PV}_${TARGET_ARCH} ${D}/usr/softcams/${CAMNAME}
         install -d ${D}/${sysconfdir}/tuxbox/config/${CAMNAME}
         [[ -e ${WORKDIR}/${CAMNAME} ]] && install 777 ${WORKDIR}/${CAMNAME}/* ${D}/${sysconfdir}/tuxbox/config/${CAMNAME} 2>/dev/null || true
         [[ -e ${D}/${sysconfdir}/tuxbox/config/${CAMNAME}/Sample.configs ]] && rm ${D}/${sysconfdir}/tuxbox/config/${CAMNAME}/Sample.configs 2>/dev/null || true

@@ -48,8 +48,8 @@ do_configure_append() {
 }
 
 do_install() {
-    install -d ${D}/usr/bin
-    install -m 0755 ${WORKDIR}/gbox_${PV}_${CAM_ARCH} ${D}/usr/bin/${CAMNAME}
+    install -d ${D}/usr/softcams
+    install -m 0755 ${WORKDIR}/gbox_${PV}_${CAM_ARCH} ${D}/usr/softcams/${CAMNAME}
     if [ "x${CAM_ARCH}" == "xarm" ]; then
         install -d ${D}/tmp
         install -m 0755 ${WORKDIR}/libnxp.so.arm ${D}/tmp/libnxp.so

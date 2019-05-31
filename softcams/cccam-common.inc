@@ -19,8 +19,8 @@ CONFFILES_${PN} ?= "/etc/CCcam.cfg"
 PACKAGE_ARCH = "${DEFAULTTUNE}"
 
 do_install() {
-    install -d ${D}/usr/bin
-    install -m 0755 ${WORKDIR}/CCcam_${PV}_${TARGET_ARCH} ${D}/usr/bin/${CAMNAME}
+    install -d ${D}/usr/softcams
+    install -m 0755 ${WORKDIR}/CCcam_${PV}_${TARGET_ARCH} ${D}/usr/softcams/${CAMNAME}
     install -d ${D}/etc
     install -m 0755 ${WORKDIR}/CCcam.cfg ${D}/etc/CCcam.cfg
 }
